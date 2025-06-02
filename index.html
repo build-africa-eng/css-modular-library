@@ -4,30 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modular CSS Library</title>
-  <!-- Tailwind CSS v4 CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bulma 1.0.2 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" rel="stylesheet">
-  <!-- Foundation 6 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" rel="stylesheet">
+  <link href="/dist/tailwind.css" rel="stylesheet">
+  <link href="/dist/bootstrap.min.css" rel="stylesheet">
+  <link href="/dist/bulma.min.css" rel="stylesheet">
+  <link href="/dist/foundation.min.css" rel="stylesheet">
 </head>
 <body>
   <h1 id="heading">Welcome to My Site</h1>
   <button id="button">Click Me</button>
   <script type="module">
-    import { applyUtility, utilities } from '/cssUtils.js';
+    import { applyUtility, utilities } from '/dist/cssUtils.js';
     const button = document.querySelector('#button');
     const heading = document.querySelector('#heading');
-    // Apply styles dynamically
     applyUtility(button, 'tailwind', 'primaryButton');
     applyUtility(heading, 'bulma', 'heading');
-    // Example: Switch to Bootstrap button style after 2 seconds
     setTimeout(() => {
       removeUtility(button, 'tailwind', 'primaryButton');
       applyUtility(button, 'bootstrap', 'primaryButton');
     }, 2000);
   </script>
 </body>
-    </html>
+</html>
