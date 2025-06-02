@@ -1,4 +1,4 @@
-// src/cssUtils.js
+l// src/cssUtils.js
 export const utilities = {
   tailwind: {
     primaryButton: 'tw-primary-button',
@@ -6,11 +6,11 @@ export const utilities = {
   },
   bootstrap: {
     primaryButton: 'btn btn-primary',
-    heading: 'display-4',
+    heading: 'display-3 fw-bold',
   },
   bulma: {
     primaryButton: 'button is-primary',
-    heading: 'title is-1',
+    heading: 'title is-1.5',
   },
   foundation: {
     primaryButton: 'button primary',
@@ -26,7 +26,7 @@ export function applyUtility(element, framework, utility) {
 }
 export function removeUtility(element, framework, utility) {
   if (!utilities[framework] || !utilities[framework][utility]) {
-    console.error(`Invalid framework or utility: ${framework}, ${utility}`);
+    console.error(`Invalid utility: ${framework}, ${utility}`);
     return;
   }
   element.classList.remove(...utilities[framework][utility].split(' '));
