@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@layer components {
+  .tw-primary-button { @apply bg-blue-500 text-white p-4 rounded; }
+  .tw-heading { @apply text-3xl font-bold; }
+               }
